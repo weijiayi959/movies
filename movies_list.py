@@ -1,4 +1,3 @@
-from urllib.parse import urlencode
 import requests
 from requests.exceptions import RequestException
 from lxml import etree
@@ -89,7 +88,7 @@ def next_page_url():
 def write(item):
     titles = set()
     if item['title'] in titles:
-        print('已经保存过了。')
+        print('Already existed.')
     else:
         titles.add(item['title'])
         return collection.insert(item)
